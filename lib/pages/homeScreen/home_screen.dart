@@ -21,7 +21,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-int _selectedItem=0;
+  int _selectedItem = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +34,8 @@ int _selectedItem=0;
             Icons.card_giftcard,
             Icons.description,
             Icons.person
-
           ],
-          titleList:[
-            'الرئيسية',
-            'الطلبات',
-            'الحجوزات',
-            'حسابي'],
+          titleList: ['الرئيسية', 'الطلبات', 'الحجوزات', 'حسابي'],
           onChange: (val) {
             setState(() {
               _selectedItem = val;
@@ -76,7 +71,9 @@ int _selectedItem=0;
                   Container(
                     height: 5,
                   ),
-                  MachinesWidget(data: DataModel.machinesList,),
+                  MachinesWidget(
+                    data: DataModel.machinesList,
+                  ),
                   Container(
                     height: 15,
                   ),
@@ -84,7 +81,9 @@ int _selectedItem=0;
                   Container(
                     height: 5,
                   ),
-                  MachinesWidget(data: DataModel.accessoriesList,),
+                  MachinesWidget(
+                    data: DataModel.accessoriesList,
+                  ),
                   Container(
                     height: 15,
                   ),
@@ -92,7 +91,9 @@ int _selectedItem=0;
                   Container(
                     height: 5,
                   ),
-                  MachinesWidget(data: DataModel.otherList,),
+                  MachinesWidget(
+                    data: DataModel.otherList,
+                  ),
                 ],
               ),
             ),

@@ -5,7 +5,6 @@ class Eps15 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(title: const Text('Eps 3')),
       body: ListView(
@@ -18,7 +17,10 @@ class Eps15 extends StatelessWidget {
               child: ClipPath(
                 clipper: ClipTrapezoid(),
                 // child: Container(color: Colors.amber),
-                child: Container(width: 250,height: 150,),
+                child: Container(
+                  width: 250,
+                  height: 150,
+                ),
                 // child: ElevatedButton(
                 //   onPressed: () {},
                 //   child: const Text('Button'),

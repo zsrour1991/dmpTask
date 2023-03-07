@@ -44,8 +44,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Container(
-
-        decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(18)),
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(18)),
         child: Row(
           children: _navBarItemList,
         ),
@@ -55,61 +55,58 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
   Widget buildNavBarItem(IconData icon, int index, String title) {
     return GestureDetector(
-      onTap: () {
-        widget.onChange(index);
-        setState(() {
-          _selectedIndex = index;
-        });
-      },
-      child:
-      ClipPath(
-        clipper:index == _selectedIndex ? ClipTrapezoid():null,
-        // child: Container(color: Colors.amber),
-        child:  Container(
-          height: 75,
-          width: MediaQuery.of(context).size.width / _iconList.length,
-          decoration: index == _selectedIndex
-              ? BoxDecoration(
-             color: Color(0xffdbf0fb),
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(index == 0 ? 16 : 0),
-                  topLeft: Radius.circular(
-                      index == widget.iconList.length - 1 ? 16 : 0)),
-              gradient: LinearGradient(colors: [
-                Color(0xffdbf0fb),
-                Color(0xffdbf0fb).withOpacity(0.015),
-              ], begin: Alignment.topCenter, end: Alignment.bottomCenter)
-          )
-              : BoxDecoration(
-              color: Color(0xffffffff),
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(index == 0 ? 16 : 0),
-                  topLeft: Radius.circular(
-                      index == widget.iconList.length - 1 ? 16 : 0))),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
-                color: index == _selectedIndex ? Color(0xff6fa7da) : Colors.grey,
-              ),
-              Container(
-                height: 3,
-              ),
-              Text(
-                title,
-                style: TextStyle(
+        onTap: () {
+          widget.onChange(index);
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        child: ClipPath(
+          clipper: index == _selectedIndex ? ClipTrapezoid() : null,
+          // child: Container(color: Colors.amber),
+          child: Container(
+            height: 75,
+            width: MediaQuery.of(context).size.width / _iconList.length,
+            decoration: index == _selectedIndex
+                ? BoxDecoration(
+                    color: Color(0xffdbf0fb),
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(index == 0 ? 16 : 0),
+                        topLeft: Radius.circular(
+                            index == widget.iconList.length - 1 ? 16 : 0)),
+                    gradient: LinearGradient(colors: [
+                      Color(0xffdbf0fb),
+                      Color(0xffdbf0fb).withOpacity(0.015),
+                    ], begin: Alignment.topCenter, end: Alignment.bottomCenter))
+                : BoxDecoration(
+                    color: Color(0xffffffff),
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(index == 0 ? 16 : 0),
+                        topLeft: Radius.circular(
+                            index == widget.iconList.length - 1 ? 16 : 0))),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  icon,
                   color:
-                  index == _selectedIndex ? Color(0xff6fa7da) : Colors.grey,
+                      index == _selectedIndex ? Color(0xff6fa7da) : Colors.grey,
                 ),
-              )
-            ],
+                Container(
+                  height: 3,
+                ),
+                Text(
+                  title,
+                  style: TextStyle(
+                    color: index == _selectedIndex
+                        ? Color(0xff6fa7da)
+                        : Colors.grey,
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-
-      )
-
-    );
+        ));
   }
 }

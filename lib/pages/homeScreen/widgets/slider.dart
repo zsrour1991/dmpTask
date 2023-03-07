@@ -9,7 +9,7 @@ class SliderWidget extends StatefulWidget {
 }
 
 class _SliderWidgetState extends State<SliderWidget> {
-    int _current = 0;
+  int _current = 0;
   final CarouselController _controller = CarouselController();
   final List<String> imgList = [
     'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
@@ -35,21 +35,18 @@ class _SliderWidgetState extends State<SliderWidget> {
                 setState(() {
                   _current = index;
                 });
-              }
-          ),
+              }),
           items: imgList.map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 150,
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                  width: MediaQuery.of(context).size.width,
+                  height: 150,
+                  margin: EdgeInsets.symmetric(horizontal: 5.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
-                        image: NetworkImage(i),fit: BoxFit.fill
-                      )
-                    ),
+                          image: NetworkImage(i), fit: BoxFit.fill)),
                 );
               },
             );
@@ -61,12 +58,14 @@ class _SliderWidgetState extends State<SliderWidget> {
             return GestureDetector(
               onTap: () => _controller.animateToPage(entry.key),
               child: Container(
-                width: _current == entry.key ?18:12.0,
-                height: _current == entry.key ?18:12.0,
+                width: _current == entry.key ? 18 : 12.0,
+                height: _current == entry.key ? 18 : 12.0,
                 margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _current == entry.key ?Color(0xff2a75bb):Colors.grey),
+                    color: _current == entry.key
+                        ? Color(0xff2a75bb)
+                        : Colors.grey),
               ),
             );
           }).toList(),

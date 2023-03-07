@@ -93,7 +93,7 @@ class _ReservationWidgetState extends State<ReservationWidget> {
                         fontSize: 15),
                   ),
                   Container(
-                    width: 3,
+                    width: 5,
                   ),
                   CircleAvatar(
                     backgroundColor: Colors.white,
@@ -103,7 +103,7 @@ class _ReservationWidgetState extends State<ReservationWidget> {
                           quarterTurns: 2,
                           child: Center(
                               child: Icon(
-                            Icons.arrow_back_ios,
+                            Icons.arrow_back_ios_sharp,
                             color: Color(0xFF253473),
                             size: 18,
                           ))),

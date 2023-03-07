@@ -62,11 +62,11 @@ int _selectedItem=0;
                   ),
                   Search(),
                   Container(
-                    height: 20,
+                    height: 40,
                   ),
                   SliderWidget(),
                   Container(
-                    height: 20,
+                    height: 40,
                   ),
                   ReservationWidget(),
                   Container(

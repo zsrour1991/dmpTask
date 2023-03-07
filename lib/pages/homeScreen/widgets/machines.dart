@@ -12,7 +12,7 @@ class _MachinesWidgetState extends State<MachinesWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 325,
+        height: 340,
       child: ListView.builder(
           itemCount: widget.data!.length,
           scrollDirection: Axis.horizontal,
@@ -28,7 +28,7 @@ class _MachinesWidgetState extends State<MachinesWidget> {
             ),
           child:
           Container(
-            height: 325,width: 200,
+            height: 340,width: 200,
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(16),
             color: Color(0xffffffff)
             ),
@@ -118,7 +118,7 @@ class _MachinesWidgetState extends State<MachinesWidget> {
                       ),),
                 ],
               ),
-              Container(height: 5,),
+              Container(height: 20,),
               Container(
                 height: 40,width:double.infinity,
                 decoration: BoxDecoration(
